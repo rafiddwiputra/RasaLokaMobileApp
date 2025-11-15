@@ -43,11 +43,11 @@
                     android:id="@+id/titleAppBar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Detail Resep"
+                    android:text="Soto Ayam Jawa"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:paddingEnd="40dp" />
+                    android:paddingEnd="0dp" />
             </LinearLayout>
 
             <!-- Foto Resep -->
@@ -56,21 +56,21 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_marginBottom="16dp"
-                android:scaleType="centerCrop"
                 android:src="@drawable/soto"
+                android:scaleType="centerCrop"
                 android:background="@drawable/rounded_bg"
                 />
 
             <!-- Judul -->
-            <TextView
-                android:id="@+id/textJudul"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Soto Ayam Jawa"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginBottom="12dp" />
+<!--            <TextView-->
+<!--                android:id="@+id/textJudul"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Soto Ayam Jawa"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginBottom="12dp" />-->
 
             <!-- Deskripsi Header + Bookmark -->
             <LinearLayout
@@ -113,7 +113,10 @@
                 android:text="Bahan-Bahan"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="8dp"
+                android:gravity="start"
+                android:layout_gravity="start"
+                />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerBahan"
@@ -130,7 +133,10 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="6dp" />
+                android:layout_marginBottom="6dp"
+                android:gravity="start"
+                android:layout_gravity="start"
+                />
 
             <TextView
                 android:id="@+id/textLangkah"
@@ -147,34 +153,74 @@
     <!-- Bottom Navigation -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:background="#FFFFFF"
         android:elevation="8dp"
         android:layout_gravity="bottom">
 
-        <TextView
+        <!-- Beranda -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="Beranda"
-            android:gravity="center"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="Resep Tersimpan"
-            android:gravity="center"
-            android:layout_height="match_parent" />
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home" />
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beranda"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Resep Tersimpan -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="Profil"
-            android:gravity="center"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_saved" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resep Tersimpan"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Profil -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_profile" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profil"
+                android:textSize="12sp" />
+        </LinearLayout>
 
     </LinearLayout>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
