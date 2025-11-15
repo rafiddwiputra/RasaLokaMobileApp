@@ -1,5 +1,6 @@
 package com.rasaloka.app
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +23,15 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Login berhasil (sementara)", Toast.LENGTH_SHORT).show()
                 // Nanti bisa lanjut ke activity beranda
+
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+                finish() // optional: agar user tidak bisa kembali ke Login
+
+
+//                =================================================================================================================
             }
+
         }
     }
 }
