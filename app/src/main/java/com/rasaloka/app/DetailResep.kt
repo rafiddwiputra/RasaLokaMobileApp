@@ -13,7 +13,7 @@ class DetailResep : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_resep)
 
-        val btnBack: ImageView = findViewById(R.id.btnBack)
+//        val btnBack: ImageView = findViewById(R.id.btnBack)
         val btnBookmark: ImageView = findViewById(R.id.btnBookmark)
         val imageResep: ImageView = findViewById(R.id.imageResep)
         val titleAppBar: TextView = findViewById(R.id.titleAppBar)
@@ -58,7 +58,7 @@ class DetailResep : AppCompatActivity() {
         recyclerBahan.adapter = BahanAdapter(listBahan)
 
         // Tombol back
-        btnBack.setOnClickListener { finish() }
+//        btnBack.setOnClickListener { finish() }
 
         // Tombol bookmark
         btnBookmark.setOnClickListener {

@@ -25,19 +25,19 @@
                 android:gravity="center_vertical"
                 android:layout_marginBottom="12dp">
 
-                <!-- Tombol Back -->
-                <FrameLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/bg_orange_round"
-                    android:gravity="center">
+<!--                &lt;!&ndash; Tombol Back &ndash;&gt;-->
+<!--                <FrameLayout-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--&lt;!&ndash;                    android:background="@drawable/bg_orange_round"&ndash;&gt;-->
+<!--                    android:gravity="center">-->
 
-                    <ImageView
-                        android:id="@+id/btnBack"
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:src="@drawable/ic_arrow_back_white" />
-                </FrameLayout>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/btnBack"-->
+<!--                        android:layout_width="22dp"-->
+<!--                        android:layout_height="22dp"-->
+<!--                        android:src="@drawable/ic_arrow_back_white" />-->
+<!--                </FrameLayout>-->
 
                 <TextView
                     android:id="@+id/titleAppBar"
@@ -58,7 +58,8 @@
                 android:layout_marginBottom="16dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/soto"
-                android:background="@drawable/rounded_bg" />
+                android:background="@drawable/rounded_bg"
+                />
 
             <!-- Judul -->
             <TextView
