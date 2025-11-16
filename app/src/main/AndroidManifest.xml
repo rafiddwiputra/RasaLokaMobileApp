@@ -11,21 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RasaLokaApp">
-
+        <activity
+            android:name=".ProfilActivity"
+            android:exported="false" />
         <!-- LoginActivity sebagai launcher -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- HomeActivity -->
+        </activity> <!-- HomeActivity -->
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
-
     </application>
+
 </manifest>
