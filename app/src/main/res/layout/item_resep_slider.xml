@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+<!--    Wadah Gambar Rekomendasi Resep-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp">
+
+<!--        Gambar Resep Rekomendasi-->
+        <ImageView
+            android:id="@+id/image_resep_rekomendasi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/steakbeef"
+            android:contentDescription="Gambar Resep Rekomendasi"/>
+    </androidx.cardview.widget.CardView>
+
+<!--    Nama Resep Rekomendasi-->
+    <TextView
+        android:id="@+id/text_judul_resep_rekomendasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Steak Beef" />
+
+<!--    Deskripsi Resep-->
+    <TextView
+        android:id="@+id/text_deskripsi_resep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tekstur Lembut berpadu dengan karamelisasi sempurna"
+        android:textColor="@color/black"
+        android:textStyle="normal"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"/>
+
+
+</LinearLayout>

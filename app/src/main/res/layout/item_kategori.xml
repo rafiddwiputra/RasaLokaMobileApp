@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="22dp"
+    android:layout_marginEnd="22dp"
+    android:gravity="center_horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="0dp"
+        android:backgroundTint="#ffffff"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <!--        Bagian Gambar Kategori Resep-->
+        <ImageView
+            android:id="@+id/icon_kategori"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ayam"
+            android:contentDescription="ikon kategori"/>
+    </androidx.cardview.widget.CardView>
+
+    <!--    Kode untuk text kategori seperti ayam, daging, sayur, telur-->
+    <TextView
+        android:id="@+id/nama_kategori_resep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Ayam"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+</LinearLayout>

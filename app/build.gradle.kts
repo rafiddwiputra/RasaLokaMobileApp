@@ -48,7 +48,12 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.cardview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    // Menambahkan Rouded Untuk Profil
+    implementation("com.google.android.material:material:1.11.0")
+    // Menambahkan dependencies untuk slider View Pager
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
 }
