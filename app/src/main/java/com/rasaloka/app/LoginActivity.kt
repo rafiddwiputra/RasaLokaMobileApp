@@ -2,36 +2,53 @@ package com.rasaloka.app
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.rasaloka.app.databinding.ActivityLoginBinding
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityLoginBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        enableEdgeToEdge()
 
-        binding.loginButton.setOnClickListener {
-            val username = binding.usernameInput.text.toString().trim()
-            val password = binding.passwordInput.text.toString().trim()
+        setContentView(R.layout.activity_login)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
-            if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Harap isi semua data", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Login berhasil (sementara)", Toast.LENGTH_SHORT).show()
-                // Nanti bisa lanjut ke activity beranda
+        val editTextUserName = findViewById<EditText>(R.id.textUsername)
+        val editTextPassword = findViewById<EditText>(R.id.textPassword)
+        val buttonLogin = findViewById<Button>(R.id.buttonLogin)
+
+
+        buttonLogin.setOnClickListener {
+            val username = editTextUserName.text.toString()
+            if (editTextUserName.text.toString() == "admin" &&
+                editTextPassword.text.toString() == "123"
+            ) {
 
                 val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra(KEY_USERNAME, username)
                 startActivity(intent)
-                finish() // optional: agar user tidak bisa kembali ke Login
 
+                Toast.makeText(this, "Login Berhasil", Toast.LENGTH_SHORT).show()
 
-//                =================================================================================================================
+                finish() // agar tidak bisa kembali ke login
+            } else {
+                Toast.makeText(this, "Username atau Password salah", Toast.LENGTH_SHORT).show()
             }
-
         }
+    }
+
+    companion object {
+        const val KEY_USERNAME = "username"
     }
 }
