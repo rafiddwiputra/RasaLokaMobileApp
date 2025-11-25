@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
@@ -13,64 +15,18 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <!-- App bar -->
-            <LinearLayout
+            <!-- Judul dan Foto -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/headerDetailResep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="12dp">
+                android:nestedScrollingEnabled="false"
+                android:layout_marginBottom="16dp" />
 
-<!--                &lt;!&ndash; Tombol Back &ndash;&gt;-->
-<!--                <FrameLayout-->
-<!--                    android:layout_width="40dp"-->
-<!--                    android:layout_height="40dp"-->
-<!--&lt;!&ndash;                    android:background="@drawable/bg_orange_round"&ndash;&gt;-->
-<!--                    android:gravity="center">-->
-
-<!--                    <ImageView-->
-<!--                        android:id="@+id/btnBack"-->
-<!--                        android:layout_width="22dp"-->
-<!--                        android:layout_height="22dp"-->
-<!--                        android:src="@drawable/ic_arrow_back_white" />-->
-<!--                </FrameLayout>-->
-
-                <TextView
-                    android:id="@+id/titleAppBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Soto Ayam Jawa"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:paddingEnd="0dp" />
-            </LinearLayout>
-
-            <!-- Foto Resep -->
-            <ImageView
-                android:id="@+id/imageResep"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginBottom="16dp"
-                android:src="@drawable/soto"
-                android:scaleType="centerCrop"
-                android:background="@drawable/rounded_bg"
-                />
-
-            <!-- Judul -->
-<!--            <TextView-->
-<!--                android:id="@+id/textJudul"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Soto Ayam Jawa"-->
-<!--                android:textSize="20sp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:gravity="center"-->
-<!--                android:layout_marginBottom="12dp" />-->
 
             <!-- Deskripsi Header + Bookmark -->
             <LinearLayout
@@ -149,78 +105,5 @@
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
-
-    <!-- Bottom Navigation -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:background="#FFFFFF"
-        android:elevation="8dp"
-        android:layout_gravity="bottom">
-
-        <!-- Beranda -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_home" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Beranda"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <!-- Resep Tersimpan -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_saved" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Resep Tersimpan"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <!-- Profil -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_profile" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profil"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-    </LinearLayout>
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

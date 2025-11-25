@@ -3,26 +3,27 @@ package com.rasaloka.app
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class DetailResep : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_detail_resep)
-
-//        val btnBack: ImageView = findViewById(R.id.btnBack)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
         val btnBookmark: ImageView = findViewById(R.id.btnBookmark)
-        val imageResep: ImageView = findViewById(R.id.imageResep)
-        val titleAppBar: TextView = findViewById(R.id.titleAppBar)
         val textDeskripsi: TextView = findViewById(R.id.textDeskripsi)
         val textLangkah: TextView = findViewById(R.id.textLangkah)
         val recyclerBahan: RecyclerView = findViewById(R.id.recyclerBahan)
-
-        // Judul (ditampilkan di AppBar)
-        titleAppBar.text = "Soto Ayam Jawa"
 
         // Deskripsi
         textDeskripsi.text = "Soto Ayam Jawa adalah masakan khas Indonesia dengan kuah kuning gurih dari kunyit dan rempah-rempah. Berisi ayam suwir, soun, tauge, dan telur rebus, disajikan hangat dengan pelengkap seperti jeruk nipis, daun bawang, dan sambal."
@@ -36,8 +37,6 @@ class DetailResep : AppCompatActivity() {
             5. Sajikan dengan soun, tauge, telur rebus, dan jeruk nipis.
         """.trimIndent()
 
-        // Gambar detail
-        imageResep.setImageResource(R.drawable.soto)
 
         // Data bahan
         val listBahan = listOf(
@@ -53,12 +52,22 @@ class DetailResep : AppCompatActivity() {
             Bahan("Garam, Gula, Penyedap, Soun, Tauge, Telur", "Secukupnya", R.drawable.pelengkap)
         )
 
-        // RecyclerView
+        // RecyclerViewHeader
         recyclerBahan.layoutManager = LinearLayoutManager(this)
         recyclerBahan.adapter = BahanAdapter(listBahan)
+        // DATA HEADER
+        val headerList = listOf(
+            HeaderDetailResep
+                ("Soto Ayam Jawa",
+                R.drawable.soto
+            )
+        )
 
-        // Tombol back
-//        btnBack.setOnClickListener { finish() }
+// SETUP RECYCLER HEADER
+        val headerRecycler: RecyclerView = findViewById(R.id.headerDetailResep)
+        headerRecycler.layoutManager = LinearLayoutManager(this)
+        headerRecycler.adapter = HeaderDetailResepAdapter(headerList)
+
 
         // Tombol bookmark
         btnBookmark.setOnClickListener {
