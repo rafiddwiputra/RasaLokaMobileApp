@@ -1,4 +1,4 @@
-package com.rasaloka.app
+package com.rasaloka.app.DetailResep
 
 data class Bahan(
     val nama: String,

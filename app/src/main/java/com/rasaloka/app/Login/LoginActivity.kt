@@ -1,4 +1,4 @@
-package com.rasaloka.app
+package com.rasaloka.app.Login
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.rasaloka.app.HomeActivity
+import com.rasaloka.app.R
 
 class LoginActivity : AppCompatActivity() {
 

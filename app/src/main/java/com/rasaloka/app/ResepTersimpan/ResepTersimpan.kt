@@ -1,4 +1,4 @@
-package com.rasaloka.app
+package com.rasaloka.app.ResepTersimpan
 
 data class ResepTersimpan(
     val title: String,

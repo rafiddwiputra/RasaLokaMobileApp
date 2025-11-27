@@ -1,4 +1,4 @@
-package com.rasaloka.app
+package com.rasaloka.app.Home
 
 data class KategoriResep (
     val namaKategori: String,

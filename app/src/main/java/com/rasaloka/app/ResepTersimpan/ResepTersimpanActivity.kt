@@ -1,9 +1,11 @@
-package com.rasaloka.app
+package com.rasaloka.app.ResepTersimpan
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.rasaloka.app.ResepTersimpan.ItemResepTersimpanAdapter
+import com.rasaloka.app.R
 
 class ResepTersimpanActivity : AppCompatActivity() {
 

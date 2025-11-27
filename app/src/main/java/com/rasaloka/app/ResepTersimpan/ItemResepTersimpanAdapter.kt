@@ -1,4 +1,4 @@
-package com.rasaloka.app
+package com.rasaloka.app.ResepTersimpan
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.rasaloka.app.R
 
 class ItemResepTersimpanAdapter(
     private val items: MutableList<ResepTersimpan>,

@@ -1,4 +1,4 @@
-package com.rasaloka.app
+package com.rasaloka.app.Home
 
 data class Resep (
     val namaResep: String,
