@@ -11,7 +11,7 @@
         android:title="Resep Tersimpan"
         android:icon="@drawable/ikon_resep"/>
     <item
-        android:id="@+id/profilFragment"
+        android:id="@+id/profileFragment"
         android:title="Profil"
         android:icon="@drawable/ikon_profil"/>
 </menu>

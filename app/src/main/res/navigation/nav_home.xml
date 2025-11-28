@@ -15,5 +15,10 @@
         android:name="com.rasaloka.app.ResepTersimpan.ResepTersimpanFragment"
         android:label="fragment_resep_tersimpan"
         tools:layout="@layout/fragment_resep_tersimpan" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.rasaloka.app.Profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>
