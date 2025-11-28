@@ -10,5 +10,10 @@
         android:name="com.rasaloka.app.Home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/resepTersimpanFragment"
+        android:name="com.rasaloka.app.ResepTersimpan.ResepTersimpanFragment"
+        android:label="fragment_resep_tersimpan"
+        tools:layout="@layout/fragment_resep_tersimpan" />
 
 </navigation>

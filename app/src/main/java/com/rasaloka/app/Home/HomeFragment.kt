@@ -127,7 +127,6 @@ class HomeFragment : Fragment() {
                 "Daging"
             )
         )
-
         val rvSemuaResep = view.findViewById<RecyclerView>(R.id.rv_semua_resep)
         // Perbaikan: Ganti This dengan requireContext()
         rvSemuaResep.layoutManager = GridLayoutManager(requireContext(), 2)
