@@ -27,5 +27,7 @@ androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navi
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 
 [plugins]
+#Menambahkan ini juga untuk navigasi Resep di Home menuju Detail Resep
+androidx-navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version = "2.7.7" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
