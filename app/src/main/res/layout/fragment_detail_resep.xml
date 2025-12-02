@@ -20,12 +20,24 @@
             android:orientation="vertical">
 
             <!-- Judul dan Foto -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/headerDetailResep"
+            <ImageView
+                android:id="@+id/imageHeader"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="12dp"
+                tools:src="@drawable/steakbeef" />
+
+            <TextView
+                android:id="@+id/textJudulHeader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:layout_marginBottom="16dp" />
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"
+                tools:text="Judul Resep" />
 
 
             <!-- Deskripsi Header + Bookmark -->
@@ -78,6 +90,8 @@
                 android:id="@+id/recyclerBahan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:nestedScrollingEnabled="false" />
 
             <!-- Langkah -->

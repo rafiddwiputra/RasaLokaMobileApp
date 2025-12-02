@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.rasaloka.app.Home.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detailResepFragment"
+            app:destination="@id/detailResepFragment" />
+    </fragment>
     <fragment
         android:id="@+id/resepTersimpanFragment"
         android:name="com.rasaloka.app.ResepTersimpan.ResepTersimpanFragment"
@@ -20,5 +24,35 @@
         android:name="com.rasaloka.app.Profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/detailResepFragment"
+        android:name="com.rasaloka.app.DetailResep.DetailResepFragment"
+        android:label="Detail Resep"
+        tools:layout="@layout/fragment_detail_resep">
+
+        <!-- digunakan untuk mengirim data menggunakan argument satu argument satu data -->
+        <argument
+            android:name="namaResep"
+            app:argType="string" />
+
+        <argument
+            android:name="gambarResep"
+            app:argType="string" />
+
+        <argument
+            android:name="deskripsiResep"
+            app:argType="string" />
+
+        <argument
+            android:name="bahanResep"
+            app:argType="string" />
+
+        <argument
+            android:name="langkahResep"
+            app:argType="string" />
+
+    </fragment>
+
+
 
 </navigation>

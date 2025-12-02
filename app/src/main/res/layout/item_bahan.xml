@@ -23,7 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Nama Bahan"
+
         android:textSize="15sp"
         android:textStyle="normal" />
 
@@ -31,7 +31,7 @@
         android:id="@+id/tvJumlahBahan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="500 g"
+
         android:textSize="14sp"
         android:gravity="end" />
 

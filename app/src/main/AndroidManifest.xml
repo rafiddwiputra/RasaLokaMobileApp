@@ -11,9 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RasaLokaApp">
-        <activity
-            android:name=".Profile.ProfilActivity"
-            android:exported="false" />
         <!-- LoginActivity sebagai launcher -->
         <activity
             android:name=".Login.LoginActivity"

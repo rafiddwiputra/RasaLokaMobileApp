@@ -25,6 +25,7 @@ class BahanAdapter(private val listBahan: List<Bahan>) :
 
     override fun onBindViewHolder(holder: BahanViewHolder, position: Int) {
         val bahan = listBahan[position]
+
         holder.imgBahan.setImageResource(bahan.gambar)
         holder.tvNamaBahan.text = bahan.nama
         holder.tvJumlahBahan.text = bahan.jumlah
