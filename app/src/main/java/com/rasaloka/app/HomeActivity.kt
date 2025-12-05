@@ -31,4 +31,16 @@ class HomeActivity : AppCompatActivity(){
         // kode baris ini akan secara otomatis menangani klik menu dan navigasi antar fragment
         bottomNavigationView.setupWithNavController(navController)
     }
+
+    override fun onBackPressed() {
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navController = navHostFragment.navController
+
+        if (!navController.popBackStack()) {
+            // Back stack kosong → keluar dari app
+            super.onBackPressed()
+        }
+    }
+
 }
