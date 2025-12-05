@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -33,6 +35,22 @@ class HomeFragment : Fragment() {
     // Semua Logika Inisialisasi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //ambil prefs
+        val prefs = requireActivity().getSharedPreferences("USER_PREF", AppCompatActivity.MODE_PRIVATE)
+        val usernameKey = prefs.getString("USERNAME", null) //lowercase key
+        val usernameDisplay = prefs.getString("USERNAME_DISPLAY", usernameKey) ?: "User"
+        val userPhotoRes = prefs.getInt("USER_PHOTO", R.drawable.default_user)
+
+        // set header: image + welcome text
+        val imgProfile = view.findViewById<ImageView>(R.id.gambarProfil)
+        val tvWelcome = view.findViewById<TextView>(R.id.tv_welcome)
+
+        tvWelcome.text = "Selamat Datang ${usernameDisplay.replaceFirstChar { it.uppercase() }}"
+        imgProfile.setImageResource(userPhotoRes)
+
+        //val welcomeText = view.findViewById<TextView>(R.id.tv_welcome)
+        //welcomeText.text = "Selamat Datang $usernameKey"
 
         // Menghubungkan Data Resep Dengan ID Resep
         val viewPager: ViewPager2 =view.findViewById(R.id.view_pager_resep)
@@ -66,7 +84,7 @@ class HomeFragment : Fragment() {
             )
         )
 
-        // Menghubungkan Adapterke ViewPager2 atau slider rekomendasi resep untuk anda
+        // Menghubungkan Adapter ke ViewPager2 atau slider rekomendasi resep untuk anda
         val adapter = SliderAdapter(resepList)
         viewPager.adapter = adapter
 
@@ -122,19 +140,19 @@ class HomeFragment : Fragment() {
                         "Garam - secukupnya",
                 "1. Rebus daging\n2. Tumis bumbu\n3. Campur dan sajikan"
             ),
-                    Resep(
-                        "Capcay",
-                        "Soto dengan kuah segar khas Jawa.",
-                        R.drawable.capcay,
-                        "Sayur",
-                        "Ayam Suwir - 500gr\n" +
-                                "Bawang putih - 3 siung\n" +
-                                "Bawang merah - 5 siung\n" +
-                                "Serai - 1 batang\n" +
-                                "Daun salam - 2 lembar\n" +
-                                "Garam - secukupnya",
-                        "1. Rebus daging\n2. Tumis bumbu\n3. Campur dan sajikan"
-                    ),
+            Resep(
+                "Capcay",
+                "Soto dengan kuah segar khas Jawa.",
+                R.drawable.capcay,
+                "Sayur",
+                "Ayam Suwir - 500gr\n" +
+                        "Bawang putih - 3 siung\n" +
+                        "Bawang merah - 5 siung\n" +
+                        "Serai - 1 batang\n" +
+                        "Daun salam - 2 lembar\n" +
+                        "Garam - secukupnya",
+                "1. Rebus daging\n2. Tumis bumbu\n3. Campur dan sajikan"
+            ),
 
             Resep(
                 "Ayam Bakar",
