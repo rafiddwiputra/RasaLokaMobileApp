@@ -10,8 +10,12 @@ class HomeActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Diguanakan untuk memuat layout activity_home yang berisikan NavHostFragment dan BottomNavigationView
+        // Digunakan untuk memuat layout activity_home yang berisikan NavHostFragment dan BottomNavigationView
         setContentView(R.layout.activity_home)
+
+        // Dipakai oleh fragment
+        val prefs = getSharedPreferences("USER_PREF", MODE_PRIVATE)
+        val username = prefs.getString("USERNAME", null)
 
         // Mendapatkan NavHostFragment sebagai tempat wadah utama
         val navHostFragment = supportFragmentManager
