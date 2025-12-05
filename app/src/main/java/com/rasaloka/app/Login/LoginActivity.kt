@@ -30,20 +30,39 @@ class LoginActivity : AppCompatActivity() {
         val editTextPassword = findViewById<EditText>(R.id.textPassword)
         val buttonLogin = findViewById<Button>(R.id.buttonLogin)
 
+        val users = mapOf(
+            "amanda" to "123",
+            "pawestri" to "123",
+            "rafid" to "123"
+        )
+
+        // mapping foto
+        val userPhotoMap = mapOf(
+            "amanda" to R.drawable.user_amanda,
+            "pawestri" to R.drawable.user_pawestri,
+            "rafid" to R.drawable.user_rafid
+        )
 
         buttonLogin.setOnClickListener {
-            val username = editTextUserName.text.toString()
-            if (editTextUserName.text.toString() == "admin" &&
-                editTextPassword.text.toString() == "123"
-            ) {
+            val usernameInput = editTextUserName.text.toString().trim()
+            val usernameKey = usernameInput.lowercase()
+            val password = editTextPassword.text.toString().trim()
+
+            if (users[usernameInput] == password) {
+                //simpan user ke SharedPreferences
+                val prefs = getSharedPreferences("USER_PREF", MODE_PRIVATE)
+                prefs.edit()
+                    .putString("USERNAME_DISPLAY", usernameInput) //original case
+                    .putString("USERNAME", usernameKey) //lowercase
+                    .putInt("USER_PHOTO", userPhotoMap[usernameKey] ?: R.drawable.default_user)
+                    .apply()
 
                 val intent = Intent(this, HomeActivity::class.java)
-                intent.putExtra(KEY_USERNAME, username)
+                //intent.putExtra(KEY_USERNAME, username)
+
                 startActivity(intent)
-
-                Toast.makeText(this, "Login Berhasil", Toast.LENGTH_SHORT).show()
-
-                finish() // agar tidak bisa kembali ke login
+                finish()
+                //finish() // agar tidak bisa kembali ke login
             } else {
                 Toast.makeText(this, "Username atau Password salah", Toast.LENGTH_SHORT).show()
             }
