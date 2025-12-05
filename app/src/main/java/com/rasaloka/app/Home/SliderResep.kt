@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rasaloka.app.R
 import com.rasaloka.app.Home.Resep
 
-class SliderAdapter(private val resepList: List<Resep>):
-    RecyclerView.Adapter<SliderAdapter.ResepViewHolder>() {
+class SliderAdapter(
+    private val resepList: List<Resep>,
+    private val listener: (Resep) -> Unit
+) : RecyclerView.Adapter<SliderAdapter.ResepViewHolder>() {
 
     // Bagian ViewHolder(mewakili file item_resep_rekomendasi.xml
     class ResepViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -34,6 +36,10 @@ class SliderAdapter(private val resepList: List<Resep>):
         holder.namaResep.text = resep.namaResep
         holder.deskripsiResep.text = resep.deskripsiResep
         holder.gambarResep.setImageResource(resep.gambarResId)
+
+        holder.itemView.setOnClickListener {
+            listener(resep)
+        }
     }
 
     //getItemCount:memberi tahu berapa banyak item yang ada di dalam daftar resep

@@ -60,33 +60,93 @@ class HomeFragment : Fragment() {
         resepList = listOf(
             Resep(
                 "Steak Beef",
-                "Tekstur lembut berpadu dengan karamelisasi sempurna",
+                "Daging sapi pilihan yang juicy dan lembut.",
                 R.drawable.steakbeef,
-                "Rekomendasi",
-                "Daging sapi, mentega, lada, garam",
-                "1. Panaskan mentega\n2. Panggang daging\n3. Sajikan hangat"
+                "Daging",
+                "Daging sapi - 200 gram\n" +
+                        "Mentega - 1 sdm\n" +
+                        "Minyak - 1 sdm\n" +
+                        "Bawang putih - 2 Siung",
+                "1. Keringkan daging dengan tisu dapur agar tidak berair\n" +
+                        "2. Bumbui bagian luar daging dengan garam, lada, dan bawang bubuk. Diamkan 10–15 menit\n" +
+                        "3. Panaskan wajan (lebih bagus cast iron) hingga sangat panas\n" +
+                        "4. Masukkan minyak, lalu letakkan daging\n" +
+                        "5. Masak tanpa dibalik dulu selama 3 - 5 menit\n" +
+                        "6. Tambahkan mentega, bawang putih, dan rosemar\n" +
+                        "7. Siram-siram daging dengan lelehan mentega (basting) agar lebih juicy dan harum\n" +
+                        "8. Angkat steak lalu istirahatkan 5 menit sebelum dipotong (biar daging tetap juicy)" ,
             ),
             Resep(
                 "Capcay",
-                "krim kental dan kejutan keju Permesan Italia",
+                "Capcay sederhana dengan cita rasa gurih dan segar.",
                 R.drawable.capcay,
-                "Rekomendasi",
-                "Sayuran campur, bawang putih, saus tiram",
-                "1. Tumis bawang\n2. Masukkan sayuran\n3. Beri saus tiram"
+                "Sayur",
+                "Bawang putih - 2 siung\n" +
+                        "Bawang merah - 3 siung\n" +
+                        "Wortel - 1 buah\n" +
+                        "Kembang Kol - 1 bonggol\n" +
+                        "Sawi Hijau - 1 genggam\n" +
+                        "Kol - 1 genggam\n" +
+                        "Telur - 1 butir\n" +
+                        "Merica bubuk - 1/2 sdt\n" +
+                        "Garam - Secukupnya\n" +
+                        "Saus Tiram - 1 sdm\n" +
+                        "Kecap Asin - 1/2 sdm\n" +
+                        "Air - Secukupnya\n" +
+                        "Minyak - Secukupnya",
+                "1. Panaskan sedikit minyak,tumis bawang merah dan bawang putih sampai wangi\n" +
+                        "2. Masukkan bakso, aduk rata\n" +
+                        "3. Tambahkan wortel dan kembang kol, tumis sebentar\n" +
+                        "4. Tuang sedikit air, lalu biarkan sayur agak empuk\n" +
+                        "5. Masukkan kol dan sawi hijau\n" +
+                        "6. Tambahkan merica, garam, gula, saus tiram, dan kecap asin\n" +
+                        "7. Aduk rata hingga semua bahan matang dan bumbu meresap\n" +
+                        "8. Angkat dan sajikan selagi hangat"
             ),
             Resep(
-                "Ayam",
-                "Rasa gurih yang menambah selera",
+                "Ayam Bakar",
+                "Ayam dengan bumbu manis gurih khas Nusantara.",
                 R.drawable.ayam_bakar,
-                "Rekomendasi",
-                "Ayam, kecap, bawang putih",
-                "1. Marinasi ayam\n2. Bakar dengan api kecil\n3. Sajikan"
+                "Ayam",
+                "Ayam - 1 Ekor\n" +
+                        "Bawang putih - 3 Siung\n" +
+                        "Bawang merah - 5 Siung\n" +
+                        "Kemiri - 3 Butir\n" +
+                        "Ketumbar - 1 sdt\n" +
+                        "Daun Salam - 2 Lembar\n" +
+                        "Daun Jeruk - 2 Lembar\n" +
+                        "Lengkuas - 1 Ruas\n" +
+                        "Kecap Manis - 3 sdm\n" +
+                        "Gula Merah - 1 sdm\n" +
+                        "Garam - Secukupnya\n" +
+                        "Kaldu Bubuk - Secukupnya\n" +
+                        "Air - Secukupnya\n" +
+                        "Minyak - Secukupnya" ,
+                "1. Haluskan bumbu: bawang merah, bawang putih, kemiri, ketumbar, dan sedikit garam\n" +
+                        "2. Panaskan sedikit minyak lalu tumis bumbu halus hingga harum\n" +
+                        "3. Tambahkan daun salam, daun jeruk, dan lengkuas\n" +
+                        "4. Masukkan potongan ayam, aduk hingga ayam berubah warna\n" +
+                        "5. Tambahkan kecap manis, gula merah, dan sedikit kaldu bubuk\n" +
+                        "6. Tuang air secukupnya, lalu ungkep ayam hingga bumbu meresap dan kuah menyusut\n" +
+                        "7. Siapkan alat bakar (grill, teflon, arang)\n" +
+                        "8. Bakar ayam sambil sesekali dioles sisa bumbu ungkep agar lebih meresap dan berwarna kecokelatan\n" +
+                        "9. Masak hingga ayam matang dan permukaannya caramelized",
             )
         )
 
         // Menghubungkan Adapter ke ViewPager2 atau slider rekomendasi resep untuk anda
-        val adapter = SliderAdapter(resepList)
+        val adapter = SliderAdapter(resepList) { resep ->
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailResepFragment(
+                resep.namaResep,
+                resep.gambarResId.toString(),
+                resep.deskripsiResep,
+                resep.bahanResep,
+                resep.langkahResep
+            )
+            findNavController().navigate(action)
+        }
         viewPager.adapter = adapter
+
 
         // Inisialisasi dan menghubungkan Indikator Titik
         setupIndicators(resepList.size)
