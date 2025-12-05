@@ -129,29 +129,48 @@ class HomeFragment : Fragment() {
         semuaResep = listOf(
             Resep(
                 "Soto Jawa",
-                "Soto dengan kuah segar khas Jawa.",
+                "Soto ayam gurih dengan kuah bening dan rempah khas Jawa.",
                 R.drawable.soto,
-                "Sayur",
-                "Ayam Suwir - 500gr\n" +
+                "Ayam",
+                "Ayam suwir - 500gr\n" +
+                        "Air - 1 liter\n" +
                         "Bawang putih - 3 siung\n" +
                         "Bawang merah - 5 siung\n" +
-                        "Serai - 1 batang\n" +
-                        "Daun salam - 2 lembar\n" +
-                        "Garam - secukupnya",
-                "1. Rebus daging\n2. Tumis bumbu\n3. Campur dan sajikan"
+                        "Kemiri - 3 butir\n" +
+                        "Kunyit - 2 cm\n" +
+                        "Jahe - 2 cm\n" +
+                        "Serai - 2 Batang\n" +
+                        "Garam, gula, penyedap, soun, dan tauge  - Secukupnya" ,
+                "1. Haluskan bawang putih, bawang merah, kemiri, kunyit, dan jahe\n" +
+                        "2. Tumis bumbu halus hingga harum, tambahkan serai dan daun jeruk\n" +
+                        "3. Masukkan ayam dan air rebusan, didihkan hingga bumbu meresap\n" +
+                        "4. Koreksi rasa dengan garam, gula, dan penyedap\n" +
+                        "5. Sajikan ayam suwir dengan kuah panas, soun, tauge, telur rebus, dan taburan bawang goreng",
             ),
             Resep(
                 "Capcay",
-                "Soto dengan kuah segar khas Jawa.",
+                "Capcay sederhana dengan cita rasa gurih dan segar.",
                 R.drawable.capcay,
                 "Sayur",
-                "Ayam Suwir - 500gr\n" +
-                        "Bawang putih - 3 siung\n" +
-                        "Bawang merah - 5 siung\n" +
-                        "Serai - 1 batang\n" +
-                        "Daun salam - 2 lembar\n" +
-                        "Garam - secukupnya",
-                "1. Rebus daging\n2. Tumis bumbu\n3. Campur dan sajikan"
+                "Bawang putih - 2 siung\n" +
+                        "Bawang merah - 3 siung\n" +
+                        "Kembang Kol - 1 bonggol\n" +
+                        "Sawi Hijau - 1 genggam\n" +
+                        "Kol - 1 genggam\n" +
+                        "Telur - 1 butir\n" +
+                        "Merica bubuk - 1/2 sdt\n" +
+                        "Saus Tiram - 1 sdm\n" +
+                        "Kecap Asin - 1/2 sdm\n" +
+                        "Air - Secukupnya\n" +
+                        "Minyak - Secukupnya",
+                "1. Panaskan sedikit minyak,tumis bawang merah dan bawang putih sampai wangi\n" +
+                        "2. Masukkan bakso, aduk rata\n" +
+                        "3. Tambahkan wortel dan kembang kol, tumis sebentar\n" +
+                        "4. Tuang sedikit air, lalu biarkan sayur agak empuk\n" +
+                        "5. Masukkan kol dan sawi hijau\n" +
+                        "6. Tambahkan merica, garam, gula, saus tiram, dan kecap asin\n" +
+                        "7. Aduk rata hingga semua bahan matang dan bumbu meresap\n" +
+                        "8. Angkat dan sajikan selagi hangat"
             ),
 
             Resep(
@@ -159,8 +178,28 @@ class HomeFragment : Fragment() {
                 "Ayam dengan bumbu manis gurih khas Nusantara.",
                 R.drawable.ayam_bakar,
                 "Ayam",
-                "Ayam, kecap manis, bawang putih, bawang merah, ketumbar.",
-                "1. Marinasi ayam\n2. Ungkep\n3. Bakar sambil diolesi kecap"
+                "Ayam - 1 Ekor\n" +
+                        "Bawang putih - 3 Siung\n" +
+                        "Bawang merah - 5 Siung\n" +
+                        "Kemiri - 3 Butir\n" +
+                        "Ketumbar - 1 sdt\n" +
+                        "Daun Salam - 2 Lembar\n" +
+                        "Daun Jeruk - 2 Lembar\n" +
+                        "Lengkuas - 1 Ruas\n" +
+                        "Kecap Manis - 3 sdm\n" +
+                        "Gula Merah - 1 sdm\n" +
+                        "Kaldu Bubuk - Secukupnya\n" +
+                        "Air - Secukupnya\n" +
+                        "Minyak - Secukupnya" ,
+                "1. Haluskan bumbu: bawang merah, bawang putih, kemiri, ketumbar, dan sedikit garam\n" +
+                        "2. Panaskan sedikit minyak lalu tumis bumbu halus hingga harum\n" +
+                        "3. Tambahkan daun salam, daun jeruk, dan lengkuas\n" +
+                        "4. Masukkan potongan ayam, aduk hingga ayam berubah warna\n" +
+                        "5. Tambahkan kecap manis, gula merah, dan sedikit kaldu bubuk\n" +
+                        "6. Tuang air secukupnya, lalu ungkep ayam hingga bumbu meresap dan kuah menyusut\n" +
+                        "7. Siapkan alat bakar (grill, teflon, arang)\n" +
+                        "8. Bakar ayam sambil sesekali dioles sisa bumbu ungkep agar lebih meresap dan berwarna kecokelatan\n" +
+                        "9. Masak hingga ayam matang dan permukaannya caramelized",
             ),
 
             Resep(
@@ -168,8 +207,19 @@ class HomeFragment : Fragment() {
                 "Daging sapi pilihan yang juicy dan lembut.",
                 R.drawable.steakbeef,
                 "Daging",
-                "Daging sapi, lada, mentega, bawang putih, garam.",
-                "1. Panaskan wajan\n2. Masak steak\n3. Diamkan sebentar sebelum disajikan"
+                "Daging sapi - 200 gram\n" +
+                        "Garam - 1 sdt\n" +
+                        "Mentega - 1 sdm\n" +
+                        "Minyak - 1 sdm\n" +
+                        "Bawang putih - 2 Siung",
+                "1. Keringkan daging dengan tisu dapur agar tidak berair\n" +
+                        "2. Bumbui bagian luar daging dengan garam, lada, dan bawang bubuk. Diamkan 10–15 menit\n" +
+                        "3. Panaskan wajan (lebih bagus cast iron) hingga sangat panas\n" +
+                        "4. Masukkan minyak, lalu letakkan daging\n" +
+                        "5. Masak tanpa dibalik dulu selama 3 - 5 menit\n" +
+                        "6. Tambahkan mentega, bawang putih, dan rosemar\n" +
+                        "7. Siram-siram daging dengan lelehan mentega (basting) agar lebih juicy dan harum\n" +
+                        "8. Angkat steak lalu istirahatkan 5 menit sebelum dipotong (biar daging tetap juicy)" ,
             )
         )
 

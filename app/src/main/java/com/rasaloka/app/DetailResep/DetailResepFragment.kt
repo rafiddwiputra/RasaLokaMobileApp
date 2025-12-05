@@ -49,7 +49,7 @@ class DetailResepFragment : Fragment() {
 
             // pilih gambar berdasarkan nama bahan
             val gambarBahan = when {
-                nama.contains("Ayam", ignoreCase = true)->R.drawable.ayam_suwir
+                nama.contains("Ayam Suwir", ignoreCase = true)->R.drawable.ayam_suwir
                 nama.contains("Bawang Putih", ignoreCase = true)-> R.drawable.baput
                 nama.contains("Bawang Merah", ignoreCase = true) ->R.drawable.bamer
                 nama.contains("Kemiri", ignoreCase = true)->R.drawable.kemiri
@@ -57,8 +57,27 @@ class DetailResepFragment : Fragment() {
                 nama.contains("Serai", ignoreCase = true)->R.drawable.serai
                 nama.contains("Daun Jeruk", ignoreCase = true)->R.drawable.daun_jeruk
                 nama.contains("Air", ignoreCase = true)->R.drawable.air_rebus
-                nama.contains("Telur", ignoreCase = true)->R.drawable.pelengkap
-                nama.contains("Garam, GUla, Penyedap, Soun, Tuge, Telur", ignoreCase = true)->R.drawable.pelengkap
+                nama.contains("Telur", ignoreCase = true)->R.drawable.telur
+                nama.contains("Garam, Gula, Penyedap, Soun, dan Tauge", ignoreCase = true)->R.drawable.pelengkap
+                nama.contains("Wortel", ignoreCase = true)->R.drawable.wortel
+                nama.contains("Bakso", ignoreCase = true)->R.drawable.bakso
+                nama.contains("Kembang Kol", ignoreCase = true)->R.drawable.kembang_kol
+                nama.contains("Kol", ignoreCase = true)->R.drawable.kol
+                nama.contains("Sawi Hijau", ignoreCase = true)->R.drawable.sawi_hijau
+                nama.contains("Garam", ignoreCase = true)->R.drawable.garam
+                nama.contains("Merica", ignoreCase = true)->R.drawable.merica
+                nama.contains("Minyak", ignoreCase = true)->R.drawable.minyak
+                nama.contains("Kecap Asin", ignoreCase = true)->R.drawable.kecap_asin
+                nama.contains("Saus Tiram", ignoreCase = true)->R.drawable.saus_tiram
+                nama.contains("Ayam", ignoreCase = true)->R.drawable.ayam_potong
+                nama.contains("Ketumbar", ignoreCase = true)->R.drawable.ketumbar
+                nama.contains("Daun Salam", ignoreCase = true)->R.drawable.daun_salam
+                nama.contains("Kecap Manis", ignoreCase = true)->R.drawable.kecap_manis
+                nama.contains("Gula Merah", ignoreCase = true)->R.drawable.gula_merah
+                nama.contains("Lengkuas", ignoreCase = true)->R.drawable.lengkuas
+                nama.contains("Kaldu Bubuk", ignoreCase = true)->R.drawable.kaldu_bubuk
+                nama.contains("Daging Sapi", ignoreCase = true)->R.drawable.daging
+                nama.contains("Mentega", ignoreCase = true)->R.drawable.mentega
 
                 else -> R.drawable.ayam_suwir // Semisal kalau bahan tidak ada maka akan otomatis menampilkan bahan dari ayam_suwir
             }
