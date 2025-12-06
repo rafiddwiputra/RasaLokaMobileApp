@@ -29,15 +29,27 @@ class ItemResepTersimpanAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
-
         holder.imgRecipe.setImageResource(item.image)
         holder.txtTitle.text = item.title
         holder.txtDesc.text = item.description
 
+        // === tombol delete ===
         holder.btnDelete.setOnClickListener {
-            onDelete(position)
+            val prefs = holder.itemView.context.getSharedPreferences("BOOKMARKS", 0)
+
+            // Hapus semua data resep berdasarkan format penyimpanan baru
+            prefs.edit()
+                .remove("${item.title}_saved")
+                .remove("${item.title}_desc")
+                .remove("${item.title}_img")
+                .remove("${item.title}_bahan")
+                .remove("${item.title}_langkah")
+                .apply()
+
+            onDelete(position) // hapus dari list recyclerview & refresh
         }
     }
+
 
     override fun getItemCount(): Int = items.size
 }
