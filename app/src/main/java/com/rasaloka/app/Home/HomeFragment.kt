@@ -160,6 +160,7 @@ class HomeFragment : Fragment() {
         // Inisialisasi Kategori Resep
         // Menghubungkan RV KategoriResep
         val KategoriData =listOf(
+            KategoriResep("Semua Resep", R.drawable.profil),
             KategoriResep("Ayam", R.drawable.ayam),
             KategoriResep("Daging", R.drawable.ikondaging),
             KategoriResep("Sayur", R.drawable.ikonsayur),
@@ -188,7 +189,7 @@ class HomeFragment : Fragment() {
         // Menambahkan Semua Data Resep akan dikumpulkan dalam satu variabel agar bisa difilter
         semuaResep = listOf(
             Resep(
-                "Soto Jawa",
+                "Soto Ayam Jawa",
                 "Soto ayam gurih dengan kuah bening dan rempah khas Jawa.",
                 R.drawable.soto,
                 "Ayam",
@@ -206,31 +207,6 @@ class HomeFragment : Fragment() {
                         "3. Masukkan ayam dan air rebusan, didihkan hingga bumbu meresap\n" +
                         "4. Koreksi rasa dengan garam, gula, dan penyedap\n" +
                         "5. Sajikan ayam suwir dengan kuah panas, soun, tauge, telur rebus, dan taburan bawang goreng",
-            ),
-            Resep(
-                "Capcay",
-                "Capcay sederhana dengan cita rasa gurih dan segar.",
-                R.drawable.capcay,
-                "Sayur",
-                "Bawang putih - 2 siung\n" +
-                        "Bawang merah - 3 siung\n" +
-                        "Kembang Kol - 1 bonggol\n" +
-                        "Sawi Hijau - 1 genggam\n" +
-                        "Kol - 1 genggam\n" +
-                        "Telur - 1 butir\n" +
-                        "Merica bubuk - 1/2 sdt\n" +
-                        "Saus Tiram - 1 sdm\n" +
-                        "Kecap Asin - 1/2 sdm\n" +
-                        "Air - Secukupnya\n" +
-                        "Minyak - Secukupnya",
-                "1. Panaskan sedikit minyak,tumis bawang merah dan bawang putih sampai wangi\n" +
-                        "2. Masukkan bakso, aduk rata\n" +
-                        "3. Tambahkan wortel dan kembang kol, tumis sebentar\n" +
-                        "4. Tuang sedikit air, lalu biarkan sayur agak empuk\n" +
-                        "5. Masukkan kol dan sawi hijau\n" +
-                        "6. Tambahkan merica, garam, gula, saus tiram, dan kecap asin\n" +
-                        "7. Aduk rata hingga semua bahan matang dan bumbu meresap\n" +
-                        "8. Angkat dan sajikan selagi hangat"
             ),
 
             Resep(
@@ -263,6 +239,49 @@ class HomeFragment : Fragment() {
             ),
 
             Resep(
+                "Opor Ayam",
+                "Ayam berkuah santan lembut dengan bumbu kuning.",
+                R.drawable.opor_ayam,
+                "Ayam",
+                "Ayam - 400 gram\n" +
+                        "Santan - 200 ml\n" +
+                        "Serai - 1 batang\n" +
+                        "Daun salam - 2 lembar\n" +
+                        "Kunyit - 2 cm\n" +
+                        "Bawang putih - 4 siung\n" +
+                        "Bawang merah - 5 siung\n" +
+                        "Garam - 1 sdt\n" +
+                        "Minyak - 1 sdm",
+                "1. Haluskan bawang putih, bawang merah, dan kunyit\n" +
+                        "2. Tumis bumbu halus hingga harum\n" +
+                        "3. Masukkan ayam lalu aduk sampai berubah warna\n" +
+                        "4. Tambahkan santan, serai, dan daun salam\n" +
+                        "5. Masak dengan api kecil sambil diaduk agar santan tidak pecah\n" +
+                        "6. Bumbui dengan garam dan masak hingga ayam empuk",
+            ),
+
+            Resep(
+                "Sate Ayam",
+                "Ayam panggang tusuk dengan bumbu kacang gurih.",
+                R.drawable.sate_ayam,
+                "Ayam",
+                "Dada ayam - 300 gram\n" +
+                        "Kecap manis - 3 sdm\n" +
+                        "Bawang putih - 3 siung\n" +
+                        "Merica - 1/2 sdt\n" +
+                        "Tusuk sate - secukupnya\n" +
+                        "Kacang tanah goreng - 100 gram\n" +
+                        "Cabe rawit - 3 buah\n" +
+                        "Garam - 1/2 sdt\n" +
+                        "Minyak - 1 sdm",
+                "1. Potong ayam kecil lalu marinasi dengan kecap, bawang putih, dan lada\n" +
+                        "2. Tusukkan ayam pada tusuk sate\n" +
+                        "3. Haluskan kacang goreng dengan cabe, garam, dan sedikit air\n" +
+                        "4. Panggang sate sambil dioles kecap\n" +
+                        "5. Sajikan sate dengan saus kacang",
+            ),
+
+            Resep(
                 "Steak Beef",
                 "Daging sapi pilihan yang juicy dan lembut.",
                 R.drawable.steakbeef,
@@ -280,8 +299,222 @@ class HomeFragment : Fragment() {
                         "6. Tambahkan mentega, bawang putih, dan rosemar\n" +
                         "7. Siram-siram daging dengan lelehan mentega (basting) agar lebih juicy dan harum\n" +
                         "8. Angkat steak lalu istirahatkan 5 menit sebelum dipotong (biar daging tetap juicy)" ,
+            ),
+
+            Resep(
+                "Rendang",
+                "Daging yang dimasak perlahan dengan santan dan rempah hingga kental dan meresap.",
+                R.drawable.rendang,
+                "Daging",
+                "Daging sapi - 500 gr\n" +
+                        "Santan - 500 ml\n" +
+                        "Bawang putih - 5 siung\n" +
+                        "Bawang merah - 7 siung\n" +
+                        "Cabai merah - 7 buah\n" +
+                        "Daun jeruk - 2 lembar\n" +
+                        "Serai - 2 batang\n" +
+                        "Garam - 1 sdt",
+                "1. Haluskan bawang, cabai, dan rempah\n" +
+                        "2. Tumis hingga harum lalu masukkan daging\n" +
+                        "3. Tambahkan santan dan aduk rata\n" +
+                        "4. Masukkan daun jeruk, serai, dan garam\n" +
+                        "5. Masak dengan api kecil sambil sesekali diaduk\n" +
+                        "6. Masak sampai santan mengental dan bumbu meresap"
+            ),
+
+            Resep(
+                "Semur Daging",
+                "Daging sapi empuk dibumbui kecap manis dan rempah khas Indonesia.",
+                R.drawable.semur_daging,
+                "Daging",
+                "Daging sapi - 400 gr\n" +
+                        "Kecap manis - 6 sdm\n" +
+                        "Bawang merah - 5 siung\n" +
+                        "Bawang putih - 3 siung\n" +
+                        "Pala - 1/2 buah\n" +
+                        "Cengkeh - 3 butir\n" +
+                        "Garam - 1 sdt",
+                "1. Tumis bawang hingga harum\n" +
+                        "2. Masukkan daging dan aduk rata\n" +
+                        "3. Tambahkan kecap dan air secukupnya\n" +
+                        "4. Masukkan pala dan cengkeh\n" +
+                        "5. Masak hingga daging empuk\n" +
+                        "6. Tunggu sampai kuah mengental"
+            ),
+
+            Resep (
+                "Rawon",
+                "Kuah hitam khas Jawa Timur dengan bumbu kluwek.",
+                R.drawable.rawon,
+                "Daging",
+                "Daging sapi - 400 gr\n" +
+                        "Kluwek - 4 butir\n" +
+                        "Bawang merah - 5 siung\n" +
+                        "Bawang putih - 3 siung\n" +
+                        "Lengkuas - 2 cm\n" +
+                        "Daun jeruk - 2 lembar\n" +
+                        "Garam - 1 sdt",
+
+                "1. Haluskan kluwek dan bawang\n" +
+                        "2. Tumis sampai wangi\n" +
+                        "3. Rebus daging hingga empuk\n" +
+                        "4. Masukkan bumbu ke dalam kuah rebusan\n" +
+                        "5. Tambahkan lengkuas dan daun jeruk\n" +
+                        "6. Masak hingga kuah hitam dan pekat"
+            ),
+
+            Resep(
+                "Capcay",
+                "Capcay sederhana dengan cita rasa gurih dan segar.",
+                R.drawable.capcay,
+                "Sayur",
+                "Bawang putih - 2 siung\n" +
+                        "Bawang merah - 3 siung\n" +
+                        "Kembang Kol - 1 bonggol\n" +
+                        "Sawi Hijau - 1 genggam\n" +
+                        "Kol - 1 genggam\n" +
+                        "Telur - 1 butir\n" +
+                        "Merica bubuk - 1/2 sdt\n" +
+                        "Saus Tiram - 1 sdm\n" +
+                        "Kecap Asin - 1/2 sdm\n" +
+                        "Air - Secukupnya\n" +
+                        "Minyak - Secukupnya",
+                "1. Panaskan sedikit minyak,tumis bawang merah dan bawang putih sampai wangi\n" +
+                        "2. Masukkan bakso, aduk rata\n" +
+                        "3. Tambahkan wortel dan kembang kol, tumis sebentar\n" +
+                        "4. Tuang sedikit air, lalu biarkan sayur agak empuk\n" +
+                        "5. Masukkan kol dan sawi hijau\n" +
+                        "6. Tambahkan merica, garam, gula, saus tiram, dan kecap asin\n" +
+                        "7. Aduk rata hingga semua bahan matang dan bumbu meresap\n" +
+                        "8. Angkat dan sajikan selagi hangat"
+            ),
+
+            Resep(
+                "Sayur Sop",
+                "Sayur kuah gurih berisi wortel dan kentang.",
+                R.drawable.sayur_sop,
+                "Sayur",
+                "Wortel - 1 buah\n" +
+                        "Kentang - 1 buah\n" +
+                        "Kol - 50 gram\n" +
+                        "Bawang putih - 3 siung\n" +
+                        "Merica - 1/4 sdt\n" +
+                        "Garam - 1 sdt\n" +
+                        "Air - 700 ml",
+                "1. Didihkan air lalu masukkan bawang putih\n" +
+                        "2. Tambahkan wortel dan kentang hingga agak empuk\n" +
+                        "3. Masukkan kubis, garam, dan lada\n" +
+                        "4. Masak hingga semua sayur lunak\n" +
+                        "5. Sajikan hangat",
+            ),
+
+            Resep(
+                "Tumis Kangkung",
+                "Kangkung tumis bawang putih gurih dan sederhana.",
+                R.drawable.tumis_kangkung,
+                "Sayur",
+                "Kangkung - 1 ikat\n" +
+                        "Bawang putih - 4 siung\n" +
+                        "Cabai merah - 3 buah\n" +
+                        "Garam - 1 sdt\n" +
+                        "Minyak - 2 sdm",
+                "1. Panaskan minyak lalu tumis bawang putih dan cabai\n" +
+                        "2. Masukkan kangkung dan aduk cepat\n" +
+                        "3. Tambahkan garam dan masak sebentar\n" +
+                        "4. Sajikan segera agar tetap renyah",
+            ),
+
+            Resep(
+                "Sayur Lodeh",
+                "Olahan sayur santan dengan bumbu khas Jawa.",
+                R.drawable.sayur_lodeh,
+                "Sayur",
+                "Terong - 1 buah\n" +
+                        "Kacang panjang - 100 gram\n" +
+                        "Santan - 200 ml\n" +
+                        "Cabai merah - 3 buah\n" +
+                        "Bawang merah - 5 siung\n" +
+                        "Bawang putih - 3 siung\n" +
+                        "Garam - 1 sdt",
+                "1. Tumis bawang merah, bawang putih, dan cabai hingga harum\n" +
+                        "2. Tambahkan sayuran dan aduk rata\n" +
+                        "3. Tuang santan lalu bumbui garam\n" +
+                        "4. Masak hingga sayur empuk\n" +
+                        "5. Sajikan saat hangat",
+            ),
+
+            Resep(
+                "Omelette",
+                "Telur dadar lembut dengan campuran sayuran.",
+                R.drawable.omelette,
+                "Telur",
+                "Telur ayam - 2 butir\n" +
+                        "Daun bawang - 1 batang\n" +
+                        "Garam - 1/4 sdt\n" +
+                        "Merica - 1/4 sdt\n" +
+                        "Mentega - 1 sdm",
+                "1. Kocok telur dengan garam dan lada\n" +
+                        "2. Tambahkan daun bawang\n" +
+                        "3. Panaskan mentega di wajan\n" +
+                        "4. Tuang telur dan masak dengan api kecil\n" +
+                        "5. Lipat omelette lalu angkat",
+            ),
+
+            Resep(
+                "Telur Balado",
+                "Telur rebus dengan sambal balado pedas.",
+                R.drawable.telur_balado,
+                "Telur",
+                "Telur ayam - 4 butir\n" +
+                        "Cabai merah besar - 5 buah\n" +
+                        "Bawang merah - 5 siung\n" +
+                        "Bawang putih - 3 siung\n" +
+                        "Garam - 1 sdt\n" +
+                        "Minyak - 3 sdm",
+                "1. Rebus telur hingga matang lalu kupas\n" +
+                        "2. Haluskan cabai, bawang merah, dan bawang putih\n" +
+                        "3. Tumis bumbu hingga harum\n" +
+                        "4. Masukkan telur dan aduk rata\n" +
+                        "5. Masak sebentar hingga bumbu menyerap",
+            ),
+
+            Resep(
+                "Telur Dadar Padang",
+                "Versi tebal berbumbu khas Minang.",
+                R.drawable.telur_dadar_padang,
+                "Telur",
+                "Telur ayam - 4 butir\n" +
+                        "Daun bawang - 1 batang\n" +
+                        "Cabai merah - 3 buah\n" +
+                        "Tepung beras - 1 sdm\n" +
+                        "Garam - 1/2 sdt\n" +
+                        "Minyak - 3 sdm",
+                "1. Kocok telur dengan garam\n" +
+                        "2. Masukkan daun bawang, cabai, dan tepung beras\n" +
+                        "3. Panaskan minyak cukup banyak\n" +
+                        "4. Tuang adonan dan masak hingga bagian luar kecokelatan\n" +
+                        "5. Balik perlahan lalu masak hingga matang",
+            ),
+
+            Resep(
+                "Sup Telur",
+                "Kuah hangat dengan telur orak-arik lembut.",
+                R.drawable.sup_telur,
+                "Telur",
+                "Telur ayam - 2 butir\n" +
+                        "Bawang putih - 2 siung\n" +
+                        "Daun bawang - 1 batang\n" +
+                        "Garam - 1 sdt\n" +
+                        "Air - 600 ml",
+                "1. Didihkan air lalu masukkan bawang putih\n" +
+                        "2. Kocok telur dan tuang perlahan sambil diaduk\n" +
+                        "3. Tambahkan garam\n" +
+                        "4. Masukkan daun bawang\n" +
+                        "5. Sajikan hangat",
             )
+
         )
+
 
         val rvSemuaResep = view.findViewById<RecyclerView>(R.id.rv_semua_resep)
         // Perbaikan: Ganti This dengan requireContext()
