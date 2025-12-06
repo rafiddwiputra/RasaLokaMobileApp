@@ -138,8 +138,8 @@ class HomeFragment : Fragment() {
         val adapter = SliderAdapter(resepList) { resep ->
             val action = HomeFragmentDirections.actionHomeFragmentToDetailResepFragment(
                 resep.namaResep,
-                resep.gambarResId.toString(),
                 resep.deskripsiResep,
+                resep.gambarResId,
                 resep.bahanResep,
                 resep.langkahResep
             )
@@ -292,10 +292,10 @@ class HomeFragment : Fragment() {
                 // Digunakan untuk mengirimkan argumen detail resep
                 val action = HomeFragmentDirections.actionHomeFragmentToDetailResepFragment(
                     resep.namaResep,
-                    resep.gambarResId.toString(),
                     resep.deskripsiResep,
+                    resep.gambarResId,
                     resep.bahanResep,
-                    resep.langkahResep,
+                    resep.langkahResep
                 )
                 findNavController().navigate(action)
             }

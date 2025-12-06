@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rasaloka.app.R
+import androidx.navigation.fragment.findNavController
 
 class ResepTersimpanFragment : Fragment() {
 
@@ -26,22 +27,34 @@ class ResepTersimpanFragment : Fragment() {
 
         loadBookmarks()
 
-        adapter = ItemResepTersimpanAdapter(listResep) { position ->
-            val prefs = requireContext().getSharedPreferences("BOOKMARKS", 0)
-            val resepName = listResep[position].title
+        adapter = ItemResepTersimpanAdapter(
+            listResep,
+            onDelete = { position ->
+                val prefs = requireContext().getSharedPreferences("BOOKMARKS", 0)
+                val resepName = listResep[position].title
 
-            //hapus semua data resep
-            prefs.edit()
-                .remove("${resepName}_saved")
-                .remove("${resepName}_desc")
-                .remove("${resepName}_img")
-                .remove("${resepName}_bahan")
-                .remove("${resepName}_langkah")
-                .apply()
+                prefs.edit()
+                    .remove("${resepName}_saved")
+                    .remove("${resepName}_desc")
+                    .remove("${resepName}_img")
+                    .remove("${resepName}_bahan")
+                    .remove("${resepName}_langkah")
+                    .apply()
 
-            listResep.removeAt(position)
-            adapter.notifyItemRemoved(position)
-        }
+                listResep.removeAt(position)
+                adapter.notifyItemRemoved(position)
+            },
+            onClick = { resep ->   // ← Pindah ke Detail
+                val action = ResepTersimpanFragmentDirections.actionResepTersimpanToDetailResep(
+                    resep.title,
+                    resep.description,
+                    resep.image,
+                    resep.bahan,
+                    resep.langkah
+                )
+                findNavController().navigate(action)
+            }
+        )
 
         recyclerView.adapter = adapter
     }

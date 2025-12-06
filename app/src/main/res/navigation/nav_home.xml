@@ -18,7 +18,11 @@
         android:id="@+id/resepTersimpanFragment"
         android:name="com.rasaloka.app.ResepTersimpan.ResepTersimpanFragment"
         android:label="fragment_resep_tersimpan"
-        tools:layout="@layout/fragment_resep_tersimpan" />
+        tools:layout="@layout/fragment_resep_tersimpan" >
+        <action
+            android:id="@+id/action_resepTersimpan_to_detailResep"
+            app:destination="@id/detailResepFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.rasaloka.app.Profile.ProfileFragment"
@@ -36,12 +40,12 @@
             app:argType="string" />
 
         <argument
-            android:name="gambarResep"
+            android:name="deskripsiResep"
             app:argType="string" />
 
         <argument
-            android:name="deskripsiResep"
-            app:argType="string" />
+            android:name="gambarResep"
+            app:argType="integer" />
 
         <argument
             android:name="bahanResep"

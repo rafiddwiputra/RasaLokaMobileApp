@@ -11,7 +11,8 @@ import com.rasaloka.app.R
 
 class ItemResepTersimpanAdapter(
     private val items: MutableList<ResepTersimpan>,
-    private val onDelete: (Int) -> Unit
+    private val onDelete: (Int) -> Unit,
+    private val onClick: (ResepTersimpan) -> Unit  // tambahan untuk ketika resep tersimpan diklik masuk ke detail resep
 ) : RecyclerView.Adapter<ItemResepTersimpanAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -47,6 +48,10 @@ class ItemResepTersimpanAdapter(
                 .apply()
 
             onDelete(position) // hapus dari list recyclerview & refresh
+        }
+        // tambahan agar resep tersimpan jika diklik masuk ke detailresep
+        holder.itemView.setOnClickListener {
+            onClick(item)
         }
     }
 
