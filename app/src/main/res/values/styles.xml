@@ -1,7 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="CircularImageStyle">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="NavIndicatorNone">
+        <item name="android:color">@android:color/transparent</item>
+    </style>
+
+    <style name="NavActiveIndicator">
+        <item name="android:color">#f94b3e</item>
+    </style>
+
 </resources>

@@ -1,9 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base theme -->
     <style name="Base.Theme.RasaLokaApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Agar icon tidak ditint otomatis -->
+        <item name="colorControlNormal">@android:color/transparent</item>
+        <item name="colorControlActivated">@android:color/transparent</item>
+        <item name="itemIconTint">@null</item>
+
+        <!-- Warna utama aplikasi mengganti ungu jadi orange -->
+        <item name="colorPrimary">#f94b3e</item>
+        <item name="colorPrimaryContainer">#f94b3e</item>
+        <item name="colorSecondary">#f94b3e</item>
+        <item name="colorSecondaryContainer">#f94b3e</item>
+        <item name="colorAccent">#f94b3e</item>
     </style>
 
-    <style name="Theme.RasaLokaApp" parent="Base.Theme.RasaLokaApp" />
+    <style name="Theme.RasaLokaApp" parent="Base.Theme.RasaLokaApp"/>
 </resources>
