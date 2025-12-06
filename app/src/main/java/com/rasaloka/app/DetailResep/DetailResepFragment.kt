@@ -87,6 +87,7 @@ class DetailResepFragment : Fragment() {
                 nama.contains("Cengkeh", ignoreCase = true) -> R.drawable.cengkeh
                 nama.contains("Kluwek", ignoreCase = true) -> R.drawable.kluwek
                 nama.contains("Daun Bawang", ignoreCase = true) -> R.drawable.daun_bawang
+                nama.contains("Tusuk Sate", ignoreCase = true) -> R.drawable.tusuk_sate
 
                 else -> R.drawable.ayam_suwir
             }
