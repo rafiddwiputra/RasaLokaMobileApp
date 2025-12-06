@@ -57,7 +57,7 @@ class DetailResepFragment : Fragment() {
                 nama.contains("Jahe", ignoreCase = true) -> R.drawable.jahe
                 nama.contains("Serai", ignoreCase = true) -> R.drawable.serai
                 nama.contains("Daun Jeruk", ignoreCase = true) -> R.drawable.daun_jeruk
-                nama.contains("Air", ignoreCase = true) -> R.drawable.air_rebus
+                nama.contains("Air", ignoreCase = true) -> R.drawable.air
                 nama.contains("Telur", ignoreCase = true) -> R.drawable.telur
                 nama.contains("Garam, Gula, Penyedap, Soun, dan Tauge", ignoreCase = true) -> R.drawable.pelengkap
                 nama.contains("Wortel", ignoreCase = true) -> R.drawable.wortel
@@ -66,7 +66,7 @@ class DetailResepFragment : Fragment() {
                 nama.contains("Kol", ignoreCase = true) -> R.drawable.kol
                 nama.contains("Sawi Hijau", ignoreCase = true) -> R.drawable.sawi_hijau
                 nama.contains("Garam", ignoreCase = true) -> R.drawable.garam
-                nama.contains("merica", ignoreCase = true) -> R.drawable.user_pawestri
+                nama.contains("merica", ignoreCase = true) -> R.drawable.merica
                 nama.contains("Minyak", ignoreCase = true) -> R.drawable.minyak
                 nama.contains("Kecap Asin", ignoreCase = true) -> R.drawable.kecap_asin
                 nama.contains("Saus Tiram", ignoreCase = true) -> R.drawable.saus_tiram
@@ -88,6 +88,12 @@ class DetailResepFragment : Fragment() {
                 nama.contains("Kluwek", ignoreCase = true) -> R.drawable.kluwek
                 nama.contains("Daun Bawang", ignoreCase = true) -> R.drawable.daun_bawang
                 nama.contains("Tusuk Sate", ignoreCase = true) -> R.drawable.tusuk_sate
+                nama.contains("Cabai Merah", ignoreCase = true) -> R.drawable.cabai_merah
+                nama.contains("Kacang Panjang", ignoreCase = true) -> R.drawable.kacang_panjang
+                nama.contains("Kangkung", ignoreCase = true) -> R.drawable.kangkung
+                nama.contains("Kentang", ignoreCase = true) -> R.drawable.kentang
+                nama.contains("Tepung Beras", ignoreCase = true) -> R.drawable.tepung_beras
+                nama.contains("Terong", ignoreCase = true) -> R.drawable.terong
 
                 else -> R.drawable.ayam_suwir
             }
