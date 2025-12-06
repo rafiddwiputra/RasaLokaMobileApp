@@ -38,9 +38,10 @@
 
             <TextView
                 android:id="@+id/txtDesc"
-                android:text="Kuah gurih dengan suwiran ayam..."
+                android:text="Kuah gurih dengan suwiran ayam dan aroma rempah khas Jawa."
                 android:textSize="13sp"
-                android:layout_marginTop="4dp"
+                android:textColor="#555555"
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -52,7 +53,9 @@
             android:layout_height="wrap_content"
             android:text="Hapus"
             android:textAllCaps="false"
-            android:backgroundTint="#F15A29"/>
+            android:backgroundTint="#F15A29"
+            android:layout_marginTop="70dp"/>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
