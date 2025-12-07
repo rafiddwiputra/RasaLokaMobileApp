@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!-- ScrollView agar semua konten bisa di-scroll -->
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,6 +9,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
+    <!-- Layout utama -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
@@ -15,204 +17,213 @@
         android:background="#FFF9F3"
         tools:context=".HomeActivity">
 
-        <!--    Header Atas-->
+        <!-- ============================
+             Bagian Header Atas (Profil)
+             ============================ -->
         <LinearLayout
             android:id="@+id/HeaderAtas"
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:background="#FF5722"
-            android:gravity="center_vertical"
             android:orientation="horizontal"
+            android:gravity="center_vertical"
             android:paddingStart="55dp"
+            android:background="#FF5722"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <!--        Bagian Profil-->
+            <!-- Foto Profil -->
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/gambarProfil"
-                android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_width="60dp"
                 android:src="@drawable/profil"
                 android:scaleType="centerCrop"
-                app:shapeAppearanceOverlay="@style/CircularImageStyle" />
+                app:shapeAppearance="@style/CircularImageStyle"/>
 
-            <!--        text sambutan samping kanan profil-->
+            <!-- Text sambutan -->
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_marginStart="12dp">
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="20dp">
 
+                <!-- Sambutan 1 -->
                 <TextView
                     android:id="@+id/tv_welcome"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Selamat Datang"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="12dp"/>
 
+                <!-- Sambutan 2 -->
                 <TextView
                     android:id="@+id/tv_welcome_sub"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Apa yang ingin kamu masak hari ini?"
                     android:textSize="12dp"
                     android:textStyle="normal"
                     android:textColor="@color/white"/>
-
             </LinearLayout>
         </LinearLayout>
 
+        <!-- Judul Rekomendasi Resep -->
         <TextView
             android:id="@+id/text_rekomendasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="Rekomendasi Resep Untuk Anda"
-            android:textStyle="bold"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/HeaderAtas"
             app:layout_constraintTop_toBottomOf="@+id/HeaderAtas" />
 
-        <!--        View Pager-->
+        <!-- ============================
+             ViewPager2 untuk Slider Resep
+             ============================ -->
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/view_pager_resep"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginTop="12dp"
             android:nestedScrollingEnabled="false"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/text_rekomendasi"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/text_rekomendasi"/>
 
-        <!--        Indicator Slider-->
+        <!-- Indikator Slider (bulatan aktif/tidak aktif) -->
         <LinearLayout
             android:id="@+id/indikator_slider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/view_pager_resep"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/view_pager_resep">
+        </LinearLayout>
 
-        <!--        Bagian Pencarian Resep-->
+        <!-- ============================
+             Kotak Pencarian Resep
+             ============================ -->
         <androidx.cardview.widget.CardView
             android:id="@+id/search_card"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="10dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="24dp"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintTop_toBottomOf="@id/indikator_slider"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/indikator_slider">
 
+            <!-- Isi card pencarian -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:paddingStart="12dp"
-                android:paddingEnd="12dp">
+                android:paddingEnd="15dp">
 
+                <!-- Icon Search -->
                 <ImageView
                     android:id="@+id/image_search"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@android:drawable/ic_menu_search" />
+                    android:layout_marginTop="12dp"
+                    app:srcCompat="@android:drawable/ic_menu_search"/>
 
+                <!-- Input pencarian -->
                 <EditText
                     android:id="@+id/edit_text_search"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="12dp"
-                    android:background="@android:color/transparent"
-                    android:cursorVisible="true"
                     android:textCursorDrawable="@null"
-                    android:paddingTop="12dp"
+                    android:background="@android:color/transparent"
                     android:singleLine="true"
                     android:textSize="16sp"
-                    android:hint="Cari Resep"
-                    />
+                    android:hint="Cari Resep" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!--        kode untuk membuat Text Kategori Resep-->
+        <!-- Judul kategori -->
         <TextView
             android:id="@+id/text_kategori"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:text="Kategori Resep"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/search_card" />
+            app:layout_constraintTop_toBottomOf="@+id/search_card" />
 
-        <!--        Recylerview Kategori Resep-->
+        <!-- RecyclerView kategori resep -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_kategori_resep"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="20dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="4"
-            app:layout_constraintTop_toBottomOf="@id/text_kategori"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:clipToPadding="false"/>
-
-        <!--        Bagian Garis Pemisah-->
-        <View
-            android:id="@+id/garis_pemisah"
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-            android:background="@drawable/rouded_garispemisah"
-            android:layout_marginTop="24dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            app:layout_constraintTop_toBottomOf="@id/rv_kategori_resep"
+            android:clipToPadding="false"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/text_kategori" />
 
-        </View>
+        <!-- Garis Pembatas -->
+        <View
+            android:id="@+id/garis_pemisah"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/rouded_garispemisah"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_kategori_resep" />
 
-        <!--        Bagian Text Semua Resep-->
+        <!--        Text Semua Resep     -->
         <TextView
             android:id="@+id/tv_semua_resep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Semua Resep"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:textStyle="bold"
             android:textSize="18sp"
+            android:text="Semua Resep"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/garis_pemisah" />
 
-        <!--        Membuat RecyleView untuk semua resep-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_semua_resep"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:clipToPadding="false"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/tv_semua_resep"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_semua_resep"
             app:spanCount="2" />
 
 
