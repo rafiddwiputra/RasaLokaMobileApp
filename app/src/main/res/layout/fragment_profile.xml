@@ -57,7 +57,10 @@
                 android:background="@drawable/card_profile_info"
                 android:paddingHorizontal="12dp"
                 android:text=""
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:enabled="false"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,7 +82,11 @@
                 android:paddingHorizontal="12dp"
                 android:inputType="textPassword"
                 android:text="********"
-                android:textSize="15sp"/>
+                android:textSize="15sp"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:enabled="false"/>
+
 
             <Button
                 android:id="@+id/btnLogout"

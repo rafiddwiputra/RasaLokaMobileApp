@@ -10,7 +10,7 @@
     </style>
 
     <style name="NavActiveIndicator">
-        <item name="android:color">#f94b3e</item>
+        <item name="android:color">#FF5722</item>
     </style>
 
 </resources>

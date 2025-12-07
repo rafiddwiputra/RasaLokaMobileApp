@@ -1,11 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Base.Theme.RasaLokaApp" parent="Theme.Material3.DayNight.NoActionBar">
 
-        <item name="colorPrimary">#f94b3e</item>
-        <item name="colorPrimaryContainer">#f94b3e</item>
-        <item name="colorSecondary">#f94b3e</item>
-        <item name="colorSecondaryContainer">#f94b3e</item>
-        <item name="colorAccent">#f94b3e</item>
+        <item name="colorPrimary">#FF5722</item>
+        <item name="colorPrimaryContainer">#FF5722</item>
+        <item name="colorSecondary">#FF5722</item>
+        <item name="colorSecondaryContainer">#FF5722</item>
+        <item name="colorAccent">#FF5722</item>
 
         <item name="itemIconTint">@null</item>
         <item name="colorControlNormal">@android:color/transparent</item>
