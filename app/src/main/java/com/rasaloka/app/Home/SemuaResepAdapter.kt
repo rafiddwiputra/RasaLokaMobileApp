@@ -14,6 +14,9 @@ class SemuaResepAdapter(
     private val listener: OnResepClickListener
 ) : RecyclerView.Adapter<SemuaResepAdapter.ResepViewHolder>() {
 
+    // Search bar: Menyimpan list awal untuk keperluan reset setelah search kosong
+    private var originalList: List<Resep> = listResep.toList()
+
     inner class ResepViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageResep: ImageView = itemView.findViewById(R.id.imageView)
         val namaResep: TextView = itemView.findViewById(R.id.text_nama_resep_grid)
@@ -44,6 +47,21 @@ class SemuaResepAdapter(
         listResep=newList
         notifyDataSetChanged()
     }
+
+    // Search bar: fungsi untuk melakukan proses filter pencarian berdasarkan nama resep
+    fun filter(query: String){
+        val filtered = if(query.isEmpty()){
+            originalList
+        } else {
+            // ignoreCase supaya pencarian tidak sensitif huruf besar/kecil
+            originalList.filter {
+                it.namaResep.contains(query, ignoreCase = true)
+            }
+        }
+        // panggil updateData agar RecyclerView merefresh tampilan
+        updateData(filtered)
+    }
+
 }
 
 // Listener ketika item diklik

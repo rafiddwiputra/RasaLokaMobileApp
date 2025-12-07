@@ -17,12 +17,27 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.rasaloka.app.R
+import android.text.Editable // Search bar
+import android.text.TextWatcher // Search bar
+import android.widget.EditText // Search bar
 
 class HomeFragment : Fragment() {
     private lateinit var indicatorsLayout: LinearLayout
     private lateinit var resepList: List<Resep>
     private lateinit var semuaResep: List<Resep>
     private lateinit var semuaResepAdapter: SemuaResepAdapter
+
+    // Search bar : // fungsi untuk memfilter list resep sesuai teks pencarian
+    private fun filterResepBySearch(keyword: String) {
+
+        // filter list data berdasarkan nama resep
+        val filteredList = semuaResep.filter {
+            it.namaResep.contains(keyword, ignoreCase = true)
+        }
+
+        // update adapter supaya recyclerview ikut berubah
+        semuaResepAdapter.updateData(filteredList)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -515,6 +530,20 @@ class HomeFragment : Fragment() {
 
         )
 
+        //Search bar : mengambil edit text search dari layout
+        val searchBar = view.findViewById<EditText>(R.id.edit_text_search)
+
+        // listener untuk mendeteksi teks berubah saat mengetik
+        searchBar.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // panggil fungsi filter
+                filterResepBySearch(s.toString())
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
 
         val rvSemuaResep = view.findViewById<RecyclerView>(R.id.rv_semua_resep)
         // Perbaikan: Ganti This dengan requireContext()
