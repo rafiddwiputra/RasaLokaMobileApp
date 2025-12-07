@@ -39,6 +39,12 @@ class HomeFragment : Fragment() {
         semuaResepAdapter.updateData(filteredList)
     }
 
+    // Semua Menu : Fungsi untuk menampilkan semua resep lagi (reset/filter off)
+    private fun showAllRecipes() {
+        // kembalikan data adapter ke list awal (semua)
+        semuaResepAdapter.updateData(semuaResep)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -175,7 +181,7 @@ class HomeFragment : Fragment() {
         // Inisialisasi Kategori Resep
         // Menghubungkan RV KategoriResep
         val KategoriData =listOf(
-            KategoriResep("Semua Resep", R.drawable.profil),
+            KategoriResep("Semua Resep", R.drawable.semua_resep),
             KategoriResep("Ayam", R.drawable.ayam),
             KategoriResep("Daging", R.drawable.ikondaging),
             KategoriResep("Sayur", R.drawable.ikonsayur),
@@ -572,15 +578,24 @@ class HomeFragment : Fragment() {
         rvSemuaResep.adapter = semuaResepAdapter
     } // Titik Akhir OnViewCreated
 
-    // Fungsi Filter Kategori Resep
-    private fun filterResepByKategori(Kategori: String){
-        // Mencari hanya resep yang kategorinya cocok
-        val filteredList =semuaResep.filter {
-            it.kategori.equals(Kategori, ignoreCase = true)
+    // Semua Resep : Fungsi untuk memfilter resep berdasarkan kategori
+    private fun filterResepByKategori(kategori: String) {
+
+        // Jika kategori adalah Semua Resep, tampilkan semua resep (reset)
+        if (kategori == "Semua Resep") {
+            showAllRecipes()
+            return
         }
-        // Memperbarui adapter dengan data yang sudah difilter
-        semuaResepAdapter.updateData(filteredList)
+
+        // filter biasa sesuai kategori
+        val filtered = semuaResep.filter {
+            it.kategori.contains(kategori, ignoreCase = true)
+        }
+
+        // tampilkan hasil filter
+        semuaResepAdapter.updateData(filtered)
     }
+
     // ==============================================================================================================================================
     // Fungsi untuk Indicators
     private fun setupIndicators(count: Int){
