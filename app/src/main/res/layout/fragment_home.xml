@@ -91,7 +91,7 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/view_pager_resep"
             android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:nestedScrollingEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
